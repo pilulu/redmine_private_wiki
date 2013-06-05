@@ -1,6 +1,9 @@
 # Private Wiki plugin for Redmine
 
 Allows individual wiki pages to be set as private. Private pages are visible only to roles with "View private wiki pages" permission.
+
+(This fork differs in having all wiki pages being private by default)
+
 http://www.redmine.org/plugins/private_wiki
 
 ![Wiki Page](https://github.com/f0y/redmine_private_wiki/raw/devel/doc/private_wiki.png)
