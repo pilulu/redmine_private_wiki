@@ -1,7 +1,7 @@
 class AddPrivateWiki < ActiveRecord::Migration
  
   def self.up
-    add_column(:wiki_pages, "private", :boolean, :default => false)
+    add_column(:wiki_pages, "private", :boolean, :default => true)
   end
 
   def self.down
