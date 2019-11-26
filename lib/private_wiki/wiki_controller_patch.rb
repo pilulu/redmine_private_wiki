@@ -4,7 +4,7 @@ module PrivateWiki
       base.send(:include, InstanceMethods)
       base.class_eval do
         unloadable
-        before_filter :authorize_private_page, :only => [:rename, :protect, :history, :diff, :annotate, :add_attachment, :destroy]
+        before_action :authorize_private_page, :only => [:rename, :protect, :history, :diff, :annotate, :add_attachment, :destroy]
         # alias_method_chain :show, :private_wiki
         # alias_method_chain :edit, :private_wiki
         # alias_method_chain :update, :private_wiki
