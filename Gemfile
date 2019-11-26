@@ -1,5 +1,7 @@
 source :rubygems
 
+gem 'protected_attributes_continued'
+
 group :development, :test do
   gem 'simplecov'
   gem 'simplecov-rcov'
