@@ -5,10 +5,13 @@ module PrivateWiki
       base.class_eval do
         unloadable
         attr_protected :private
-        alias_method_chain :visible?, :private_wiki
+        # alias_method_chain :visible?, :private_wiki
+        alias_method :visible_without_private_wiki?, :visible?
+        alias_method :visible?, :visible_with_private_wiki?
         #named_scope :nonprivate_only, :conditions => {:private => false}
       end
     end
+
 
     module InstanceMethods
 

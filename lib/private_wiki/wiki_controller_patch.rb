@@ -5,9 +5,15 @@ module PrivateWiki
       base.class_eval do
         unloadable
         before_filter :authorize_private_page, :only => [:rename, :protect, :history, :diff, :annotate, :add_attachment, :destroy]
-        alias_method_chain :show, :private_wiki
-        alias_method_chain :edit, :private_wiki
-        alias_method_chain :update, :private_wiki
+        # alias_method_chain :show, :private_wiki
+        # alias_method_chain :edit, :private_wiki
+        # alias_method_chain :update, :private_wiki
+        alias_method :show_without_private_wiki, :show
+        alias_method :show, :show_with_private_wiki
+        alias_method :edit_without_private_wiki, :edit
+        alias_method :edit, :edit_with_private_wiki
+        alias_method :update_without_private_wiki, :update
+        alias_method :update, :update_with_private_wiki
       end
     end
 

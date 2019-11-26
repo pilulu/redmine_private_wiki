@@ -3,7 +3,9 @@ module PrivateWiki
     def self.included(base)
       base.send(:include, InstanceMethods)
       base.class_eval do
-        alias_method_chain :macro_include, :private_wiki
+        #alias_method_chain :macro_include, :private_wiki
+        alias_method :macro_include_without_private_wiki, :macro_include
+        alias_method :macro_include, :macro_include_with_private_wiki
       end
     end
 
